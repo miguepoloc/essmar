@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def geovisor(request):
+    return render(request, 'geovisor/main.html')
