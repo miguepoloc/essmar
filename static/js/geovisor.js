@@ -9,7 +9,7 @@ require([
         Graphic
     ) {
         var map = new Map({
-            basemap: "hybrid"
+            basemap: "streets"
         });
 
         var view = new MapView({
