@@ -18,4 +18,4 @@ class Luminarias(models.Model):
     fecha_inventario = models.DateTimeField()
 
     def __str__(self):
-        return self.nombre_ciudad
+        return str(self.id)
