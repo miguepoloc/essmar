@@ -45,10 +45,78 @@ require([
                         }
                     };
 
+                    // Se crean los atributos
+                    var puntoAtributo = {
+                        id: String(lista_luminarias[index].id),
+                        nombre_ciudad: lista_luminarias[index].nombre_ciudad,
+                        nombre_barrio: lista_luminarias[index].nombre_barrio,
+                        codigo_actual: lista_luminarias[index].codigo_actual,
+                        nombre_estructura: lista_luminarias[index].nombre_estructura,
+                        potencia: String(lista_luminarias[index].potencia),
+                        nombre_uso_alumbrado: lista_luminarias[index].nombre_uso_alumbrado,
+                        x: lista_luminarias[index].x,
+                        y: lista_luminarias[index].y,
+                        latitud: lista_luminarias[index].latitud,
+                        longitud: lista_luminarias[index].longitud,
+                        nombre_tipo_fuente: lista_luminarias[index].nombre_tipo_fuente,
+                        nombre_tipo_luminaria: lista_luminarias[index].nombre_tipo_luminaria,
+                        fecha_inventario: lista_luminarias[index].fecha_inventario,
+                    };
+
                     // Create a graphic and add the geometry and symbol to it
                     var pointGraphic = new Graphic({
                         geometry: point,
-                        symbol: markerSymbol
+                        symbol: markerSymbol,
+                        attributes: puntoAtributo,
+                        popupTemplate: {
+                            id: "{id}",
+                            content: [{
+                                type: "fields",
+                                fieldInfos: [{
+                                        fieldName: "id"
+                                    },
+                                    {
+                                        fieldName: "nombre_ciudad"
+                                    },
+                                    {
+                                        fieldName: "nombre_barrio"
+                                    },
+                                    {
+                                        fieldName: "codigo_actual"
+                                    },
+                                    {
+                                        fieldName: "nombre_estructura"
+                                    },
+                                    {
+                                        fieldName: "potencia"
+                                    },
+                                    {
+                                        fieldName: "nombre_uso_alumbrado"
+                                    },
+                                    {
+                                        fieldName: "x"
+                                    },
+                                    {
+                                        fieldName: "y"
+                                    },
+                                    {
+                                        fieldName: "latitud"
+                                    },
+                                    {
+                                        fieldName: "longitud"
+                                    },
+                                    {
+                                        fieldName: "nombre_tipo_fuente"
+                                    },
+                                    {
+                                        fieldName: "nombre_tipo_luminaria"
+                                    },
+                                    {
+                                        fieldName: "fecha_inventario"
+                                    }
+                                ]
+                            }]
+                        }
                     });
 
                     // Add the graphics to the view's graphics layer
